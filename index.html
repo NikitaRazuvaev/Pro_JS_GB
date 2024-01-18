@@ -3,37 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Отзывы о продуктах</title>
     <link rel="stylesheet" href="/style/style.css" />
-    <script src="/script/main.js"></script>
+    <title>Отзывы о продуктах</title>
   </head>
   <body>
-    <section class="block-order">
-      <h1 class="title-h">Отзывы о продуктах</h1>
-      <div class="reviews">
-        <h2 class="title-h">Добавить отзыв</h2>
-        <form id="review-form" class="order">
-          <label for="product-name">Название продукта:</label>
-          <input class="style-tnput" type="text" id="product-name" required />
-          <label for="user-review">Ваш отзыв:</label>
+    <div class="container">
+      <!-- Страница добавления отзыва -->
+      <div id="addReviewPage" class="style-add-order">
+        <h1>Добавление отзыва</h1>
+        <form id="reviewForm">
+          <label for="productName">Название продукта:</label>
+          <input type="text" id="productName" name="productName" required />
 
-          <textarea
-            class="style-tnput"
-            id="user-review"
-            rows="4"
-            required
-          ></textarea>
-          <button class="style-btn" type="submit">Добавить отзыв</button>
+          <label for="reviewText">Текст отзыва:</label>
+          <textarea id="reviewText" name="reviewText" required></textarea>
+
+          <button type="button" onclick="addReview()">Добавить отзыв</button>
         </form>
       </div>
-      <div class="reviews">
-        <h2 class="title-h">Просмотр отзывов</h2>
-        <ul class="ul-order" id="review-list">
-          <!-- Отзывы будут отображаться здесь -->
-        </ul>
-      </div>
-    </section>
 
-    <script src="script.js"></script>
+      <!-- Страница просмотра отзывов -->
+      <div id="viewReviewsPage">
+        <h1>Просмотр отзывов</h1>
+        <ul id="productList"></ul>
+        <div id="reviewsContainer"></div>
+      </div>
+      <button onclick="showAddReviewPage()">
+        Обратно к добавлению комментария
+      </button>
+    </div>
+
+    <script src="/script/main.js"></script>
   </body>
 </html>
